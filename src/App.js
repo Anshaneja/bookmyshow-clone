@@ -1,18 +1,18 @@
 import React from "react";
 import { Route } from "react-router";
 import DefaultHOC from "./HOC/DefaultHOC";
+import HomePage from "./Pages/HomePage";
+import MoviePage from "./Pages/MoviePage";
+import axios from "axios";
 
-function HomePage(){
-  return (<h1>Home Page</h1>)
-}
-function Contact(){
-  return (<h1>Contact Page</h1>)
-}
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
+axios.defaults.params = {};
+axios.defaults.params["api_key"] = "7e2266e335589f47e49bcbfad0393379";
 function App() {
   return (
     <>
       <DefaultHOC path='/' exact component={HomePage} />
-      <DefaultHOC path='/contact' exact component = {Contact} />
+      <DefaultHOC path='/movie/:id' component = {MoviePage} />
     </>
   );
 }

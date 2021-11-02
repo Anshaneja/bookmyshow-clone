@@ -1,6 +1,8 @@
-import React from 'react';
-import {BiSearch , BiMenu} from 'react-icons/bi';
+import React, { useContext } from 'react';
+import {BiSearch , BiMenu, BiShareAlt} from 'react-icons/bi';
+import { RiArrowLeftSLine } from 'react-icons/ri';
 import { GoTriangleDown} from 'react-icons/go';
+import {MovieContext} from "../Context/movieContext";
 
 function NavSm(){
     return (
@@ -20,15 +22,32 @@ function NavSm(){
     )
 }
 
-function NavMd(){
-    return (
-        <>
-            <div class="flex items-center gap-3  rounded bg-white w-full px-3 py-1.5">
+
+function NavMd(props){
+    const {movie} = useContext(MovieContext);
+    
+    if(props.path.startsWith('/movie')){
+        return (
+            <div className="flex justify-between w-full bg-white px-4 py-3">
+                <div className="flex gap-3 px-2">
+                    <RiArrowLeftSLine className="h-8 w-8"/>
+                    <h1 className="text-xl font-bold">{movie.title}</h1> 
+                </div>
+                <div>
+                    <BiShareAlt className="h-8 w-8"/>
+                </div>
+            </div>
+        )
+    }
+    else{
+    return ( 
+        <div className="bg-black-700 px-4 py-3 w-full">
+            <div className="flex items-center gap-3  rounded bg-white w-full px-3 py-1.5">
                         <BiSearch className="text-black-500"/>
                         <input type="search" placeholder="Search for Movies" className=" border-none bg-transparent focus:outline-none w-full" />
                     </div>
-        </>
-    )
+        </div>
+    )}
 }
 
 function NavLg(){
@@ -58,19 +77,19 @@ function NavLg(){
 }
 
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <>
-            <nav className="bg-black-700 px-4 py-3">
-                <div className="md:hidden">
+            <nav className="">
+                <div className="md:hidden bg-black-700 px-4 py-3">
                     {/* Mobile Screen */}
                     <NavSm />
                 </div>
                 <div className="hidden md:flex lg:hidden">
                     {/* Medium/Tab Screen */}
-                    <NavMd />
+                    <NavMd path={props.path} />
                 </div>
-                <div className="hidden w-full lg:flex">
+                <div className="hidden w-full lg:flex bg-black-700 px-4 py-3">
                     {/* Large Screen */}
                     <NavLg />
                 </div>

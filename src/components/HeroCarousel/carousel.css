@@ -1,0 +1,63 @@
+/* REACT SLICK ARROW CUSTOM CSS */
+.react__slick__slider__parent {
+    position: relative;
+  }
+  
+  .react__slick__slider__parent .slick-prev,
+  .react__slick__slider__parent .slick-next {
+    position: absolute;
+    top: 50%;
+  }
+  .react__slick__slider__parent .slick-prev {
+    color: white;
+    background-color: black;
+    z-index: 1;
+    height: 50px;
+    width: 70px;
+    border-radius: 8%;
+    padding-left: 20px;
+  }
+  .react__slick__slider__parent .slick-next {
+    color: white;
+    background-color: black;
+    z-index: 1;
+    height: 50px;
+    width: 80px;
+    border-radius: 8%;
+    padding-right: 30px;
+  }
+  
+  .react__slick__slider__parent .slick-prev:before, .slick-next:before {
+    color:white;
+  }
+
+  
+.react__slick__slider__parent {
+  position: relative;
+}
+/*
+.react__slick__slider__parent .slick-prev,
+.react__slick__slider__parent .slick-next {
+  position: absolute;
+  top: 50%;
+}
+.react__slick__slider__parent .slick-prev {
+  color: white;
+  background-color: black;
+  z-index: 1;
+  left: 2% !important;
+
+}
+.react__slick__slider__parent .slick-next {
+  color: white;
+  background-color: black;
+  z-index: 1;
+  right: 2% !important;
+  height: 30px;
+  width: 30px;
+}
+
+.react__slick__slider__parent .slick-prev:before, .slick-next:before {
+  color:white;
+}
+*/
