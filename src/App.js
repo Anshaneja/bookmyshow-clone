@@ -1,5 +1,4 @@
 import React from "react";
-import { Route } from "react-router";
 import DefaultHOC from "./HOC/DefaultHOC";
 import HomePage from "./Pages/HomePage";
 import MoviePage from "./Pages/MoviePage";

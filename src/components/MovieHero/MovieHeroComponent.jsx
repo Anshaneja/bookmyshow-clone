@@ -24,7 +24,7 @@ function MovieHeroComponent() {
             
             }}>
             <div className="h-full p-10 pl-32 ">
-                <img src={movieDetails.posterImage} className="w-full h-full rounded-xl"/>
+                <img src={movieDetails.posterImage} alt="Poster" className="w-full h-full rounded-xl"/>
             </div>
             <div className=" flex flex-col gap-5 py-10 text-gray-200 w-96" >
                 <h1 className="text-4xl font-bold text-white">{movieDetails.movieName}</h1>
@@ -57,7 +57,7 @@ function MovieHeroComponent() {
                 <img 
                     src={movieDetails.bgImageUrl} 
                     className="w-full h-full rounded-xl"  
-                    alt="Movie Hero Image"
+                    alt="Movie Hero"
                 />
             </div>
             <div className="flex gap-2 pl-3 items-center">

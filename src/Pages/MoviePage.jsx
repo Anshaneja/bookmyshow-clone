@@ -23,14 +23,14 @@ function MoviePage() {
         }
         requestMovie();
         
-    },[]);
+    },[id,setMovie]);
     useEffect( ()=>{
         const requestCast = async() => {
             const getCast = await axios.get(`/movie/${id}/credits`)
             setCast(getCast.data.cast);
         }
         requestCast();
-    },[])
+    },[id])
 
     const [SimilarMovies, setSimilarMovies] = useState([]);
     const [TopRatedMovies, setTopRatedMovies] = useState([]);
@@ -46,7 +46,7 @@ function MoviePage() {
             }
         }
         requestSimilarMovies();
-    }, []);
+    }, [id]);
 
     useEffect( () => {
         const requestTopRatedMovies = async() => {
@@ -59,7 +59,7 @@ function MoviePage() {
             }
         }
         requestTopRatedMovies();
-    }, []);
+    }, [id]);
 
 
     const settings = {
@@ -99,7 +99,7 @@ function MoviePage() {
         return (
             <div className="flex flex-col items-center">
                 <div className="h-24 w-24  md:h-32 md:w-32 ">
-                    <img src= {props.profilePic} className=" h-full w-full rounded-full" />
+                    <img src= {props.profilePic} alt="Cast Profile Pic" className=" h-full w-full rounded-full" />
                 </div>
                 <h1 className=" text-sm md:text-md text-center">{props.name}</h1>
                 <h1 className=" text-xs md:text-sm text-gray-500 text-center mx-2" >{`as ${props.role}`}</h1>

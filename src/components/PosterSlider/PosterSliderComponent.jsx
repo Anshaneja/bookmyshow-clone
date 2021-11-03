@@ -17,9 +17,9 @@ function PosterCard(props) {
         <Link to={`/movie/${props.posterDetails.id}`}>
             <div className="px-3">
                 <div className="h-90 w-auto pb-2">
-                    <img src={`https://images.tmdb.org/t/p/original${props.posterDetails.poster_path}`} className="w-full h-full rounded-xl"/>
+                    <img src={`https://images.tmdb.org/t/p/original${props.posterDetails.poster_path}`} alt="Poster" className="w-full h-full rounded-xl"/>
                 </div>
-                <h1 className={"text-md md:text-xl font-semibold pl-2 " + " " + textColor}>{props.posterDetails.title}</h1>
+                <h1 className={`text-md md:text-xl font-semibold pl-2  ${textColor}`}>{props.posterDetails.title}</h1>
             </div>
         </Link>
     );
@@ -74,12 +74,12 @@ function PosterSlider(props) {
     }
     return(
         <>
-            <div className= {"flex flex-col justify-center pt-3 md:6 lg:pt-10 "+ "  " + theme.bgColor + " " + props.className}>
+            <div className= {`flex flex-col justify-center pt-3 md:6 lg:pt-10   ${theme.bgColor}   ${props.className}`}>
                 {props.elements}
-                <h1 className={"text-xl md:text-2xl lg:text-3xl font-bold " + "  " + theme.textColor}>{props.title}</h1>
+                <h1 className={`text-xl md:text-2xl lg:text-3xl font-bold  ${theme.textColor}`}>{props.title}</h1>
                 <Slider {...settings} className="">
-                        {props.PosterDetails.map( (poster) => (
-                            <PosterCard posterDetails ={poster} isdark = {props.isdark}/> 
+                        {props.PosterDetails.map( (poster,index) => (
+                            <PosterCard posterDetails ={poster} isdark = {props.isdark}  key={`Poster${index}`}/> 
                         ))}
                 </Slider>
             </div>

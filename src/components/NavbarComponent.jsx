@@ -58,7 +58,7 @@ function NavLg(){
                     <div className="w-10 h-10">
                         <img src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png" alt="logo" className="w-full h-full" />
                     </div>
-                    <div class="flex items-center gap-3  rounded bg-white w-full px-3 py-1.5">
+                    <div className="flex items-center gap-3  rounded bg-white w-full px-3 py-1.5">
                         <BiSearch className="text-black-500"/>
                         <input type="search" placeholder="Search for Movies" className=" border-none bg-transparent focus:outline-none w-full" />
                     </div>

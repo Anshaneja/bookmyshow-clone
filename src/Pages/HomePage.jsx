@@ -1,5 +1,5 @@
 
-import React, {useState, useE, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import HeroCarousel from "../components/HeroCarousel/HeroCarouselComponent";
 import EntertainmentCardSlider from "../components/EntertainmentCard/EntertainmentCardComponent";
 import PosterSlider from "../components/PosterSlider/PosterSliderComponent";
@@ -69,7 +69,7 @@ function HomePage(){
             PosterDetails = {TopRatedMovies}
             isdark = {true}
             className="mt-4 md:mt-12 lg:mt-20 pl-5 md:pl-8 lg:pl-11 "
-            elements = {<img className="w-full h-30 mb-10" src ="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png"/>} 
+            elements = {<img className="w-full h-30 mb-10" alt="Premiere" src ="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png" />} 
         />
         <PosterSlider 
             title= "Upcoming Movies"

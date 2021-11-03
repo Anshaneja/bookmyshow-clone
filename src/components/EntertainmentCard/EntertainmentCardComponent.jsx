@@ -6,32 +6,11 @@ import "./carousel.css";
 
 
 
-import {IoIosArrowForward , IoIosArrowBack } from 'react-icons/io';
-function NextArrow(props) {
-    return (
-        <> 
-        <div>
-            <div
-                className={props.className}
-                style={{ ...props.style }}
-                onClick={props.onClick}
-            >
-                <IoIosArrowBack />
-            </div>
-        </div>
-        </>
-    );
-}
-
-
-
-
-
 function EntertainmentCard(props) {
     return(
         <>
             <div className="w-full h-25 px-2">
-                <img className="w-full h-full rounded-xl" src={props.src} alt="Entertainment image"/>
+                <img className="w-full h-full rounded-xl" src={props.src} alt="Entertainment"/>
             </div>
         </>
     );
@@ -82,8 +61,8 @@ function EntertainmentCardSlider() {
         <div className="pt-2 md:pt-5">
             <h1 className="text-xl lg:text-2xl py-3 pl-5 md:pl-8 lg:pl-11 font-bold text-black-700">The Best of Entertainment</h1>
             <Slider {...settings} className="lg:px-9 px-3 react__slick__slider__parent">
-                {EntertainmentImages.map( (image) => (
-                    <EntertainmentCard src={image} />
+                {EntertainmentImages.map( (image,index) => (
+                    <EntertainmentCard src={image} key={`card${index}`}/>
                 ) )}
             </Slider>
         </div>
