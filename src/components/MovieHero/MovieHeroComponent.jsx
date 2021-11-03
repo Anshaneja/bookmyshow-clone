@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext , useState } from "react";
 import { FaHeart } from "react-icons/fa"
 import { MovieContext } from "../../Context/movieContext";
-
+import PaymentModal from "../PaymentModal/Payment";
 
 function MovieHeroComponent() {
     const {movie} = useContext(MovieContext);
@@ -10,11 +10,24 @@ function MovieHeroComponent() {
         posterImage : `https://images.tmdb.org/t/p/original${movie.poster_path}`,
         movieName : movie.original_title,
         movieDescription : movie.tagline,
-        genres: movie.genres && movie.genres.map( ( {name} ) => name).join(", "),
+        genres: movie.genres?.map( ( {name} ) => name).join(", "),
         language : movie.original_language,
+    };
+    const [isOpen, setIsOpen] = useState(false);
+    const [price, setPrice] = useState(0);
+  
+    const rentMovies = () => {
+      setIsOpen(true);
+      setPrice(149);
+    };
+  
+    const buyMovie = () => {
+      setIsOpen(true);
+      setPrice(599);
     };
     return (
         <>
+            <PaymentModal setIsOpen={setIsOpen} isOpen={isOpen} price={price} />
             <div className="hidden lg:flex  w-full" style={{
             backgroundImage : "linear-gradient(90deg, rgb(34, 34, 34) 24.97%, rgb(34, 34, 34) 38.3%, rgba(34, 34, 34, 0.04) 97.47%, rgb(34, 34, 34) 100%), url(" + movieDetails.bgImageUrl + ")" ,
             backgroundRepeat: "no-repeat",
@@ -46,8 +59,8 @@ function MovieHeroComponent() {
                 <h1 className= "">English, Hindi, Kannada, Tamil, Telugu</h1>
                 <h1 className= "">{movieDetails.genres}</h1>
                 <div className="flex gap-3">
-                    <button className="rounded-md bg-red-500 text-white text-lg px-6 py-2">Rent 149</button>
-                    <button className="rounded-md bg-red-500 text-white text-lg px-6 py-2">Buy 499</button>
+                    <button onClick={rentMovies} className="rounded-md bg-red-500 text-white text-lg px-6 py-2">Rent 149</button>
+                    <button onClick={buyMovie} className="rounded-md bg-red-500 text-white text-lg px-6 py-2">Buy 499</button>
                 </div>
             </div>
         </div> 
