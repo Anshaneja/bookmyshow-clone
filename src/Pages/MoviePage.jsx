@@ -24,14 +24,13 @@ function MoviePage() {
         requestMovie();
         
     },[id,setMovie]);
-    useEffect( ()=>{
-        const requestCast = async() => {
-            const getCast = await axios.get(`/movie/${id}/credits`)
+    useEffect( () => {
+        const requestCast = async () => {
+            const getCast = await axios.get(`/movie/${id}/credits`);
             setCast(getCast.data.cast);
-        }
+        };
         requestCast();
-    },[id])
-
+    }, [id]);
     const [SimilarMovies, setSimilarMovies] = useState([]);
     const [TopRatedMovies, setTopRatedMovies] = useState([]);
 
@@ -99,7 +98,7 @@ function MoviePage() {
         return (
             <div className="flex flex-col items-center">
                 <div className="h-24 w-24  md:h-32 md:w-32 ">
-                    <img src= {props.profilePic} alt="Cast Profile Pic" className=" h-full w-full rounded-full" />
+                    <img src= {`https://image.tmdb.org/t/p/original${props.image}`} alt="Cast Profile Pic" className=" h-full w-full rounded-full" />
                 </div>
                 <h1 className=" text-sm md:text-md text-center">{props.name}</h1>
                 <h1 className=" text-xs md:text-sm text-gray-500 text-center mx-2" >{`as ${props.role}`}</h1>
@@ -139,13 +138,13 @@ function MoviePage() {
                 </div>
                 <div>
                     <h1 className="text-xl md:text-2xl font-bold text-black-800 ">Cast and Crew</h1>
-                    <Slider {...settings} className="mt-5 flex justify-start">
-                        {cast.map( (castInfo) => (
-                            <CastCard 
-                                profilePic = {`https://images.tmdb.org/t/p/original${castInfo.profile_path}`}
-                                name = {castInfo.original_name}
-                                role = {castInfo.character}
-                            />
+                    <Slider {...settings} className="py-3">
+                        {cast.map((castData) => (
+                        <CastCard
+                            image={castData.profile_path}
+                            name={castData.original_name}
+                            role={castData.character}
+                        />
                         ))}
                     </Slider>
                 </div>

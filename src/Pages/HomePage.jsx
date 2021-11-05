@@ -61,7 +61,7 @@ function HomePage(){
             title= "Popular Movies"
             PosterDetails = {PopularMovies}
             isdark = {false} 
-            className="pl-5 md:pl-8 lg:pl-11 "
+            className="pl-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10 "
         />
         <EntertainmentCardSlider />
         <PosterSlider 
@@ -75,7 +75,7 @@ function HomePage(){
             title= "Upcoming Movies"
             PosterDetails = {UpcomingMovies}
             isdark = {false}
-            className="pl-5 md:pl-8 lg:pl-11 "  
+            className="pl-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10 "  
         />
         
       </div>
