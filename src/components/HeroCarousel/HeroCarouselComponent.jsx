@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSlider from 'react-slick';
 import { useState , useEffect} from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 
@@ -64,13 +65,15 @@ const HeroCarousel = () => {
         <div className="hidden lg:block">
             <HeroSlider {...settingsLG}>
                 {images.map( (image,index) => (
-                    <div key={`hero${index}`} className="w-full h-96  px-2 py-3" >
+                    <Link to={`/movie/${image.id}`}>
+                    <div key={`hero${index}`} className="w-full lg:h-96 px-2 py-3" >
                         <img 
                             src= {`https://images.tmdb.org/t/p/original${image.backdrop_path}`}
                             alt="Hero Banner"
                             className="w-full h-full rounded object-center"
                         />
                     </div>
+                    </Link>
                 ))}
             </HeroSlider>
         </div>

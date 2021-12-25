@@ -4,6 +4,8 @@ import { RiArrowLeftSLine } from 'react-icons/ri';
 import { GoTriangleDown} from 'react-icons/go';
 import {MovieContext} from "../Context/movieContext";
 
+
+
 function NavSm(){
     return (
         <>
@@ -28,7 +30,7 @@ function NavMd(props){
     
     if(props.path.startsWith('/movie')){
         return (
-            <div className="flex justify-between w-full bg-white px-4 py-3">
+            <div className="flex justify-between w-full bg-white px-4 py-3 ">
                 <div className="flex gap-3 px-2">
                     <RiArrowLeftSLine className="h-8 w-8"/>
                     <h1 className="text-xl font-bold">{movie.title}</h1> 
@@ -44,7 +46,7 @@ function NavMd(props){
         <div className="bg-black-700 px-4 py-3 w-full">
             <div className="flex items-center gap-3  rounded bg-white w-full px-3 py-1.5">
                         <BiSearch className="text-black-500"/>
-                        <input type="search" placeholder="Search for Movies" className=" border-none bg-transparent focus:outline-none w-full" />
+                        <input type="search" placeholder="Search for Movies, Events, Plays, Sports and Activities" className=" border-none bg-transparent focus:outline-none w-full" />
                     </div>
         </div>
     )}
@@ -52,15 +54,15 @@ function NavMd(props){
 
 function NavLg(){
     return (
-        <>
-            <div className="flex items-center justify-between mx-3 w-full">
+        <div className="flex flex-col w-full">
+            <div className="flex items-center justify-between mx-3 w-full px-6 py-4">
                 <div className="flex items-center w-1/2 gap-3">
-                    <div className="w-10 h-10">
+                    <div className="flex w-10 h-10">
                         <img src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png" alt="logo" className="w-full h-full" />
                     </div>
                     <div className="flex items-center gap-3  rounded bg-white w-full px-3 py-1.5">
                         <BiSearch className="text-black-500"/>
-                        <input type="search" placeholder="Search for Movies" className=" border-none bg-transparent focus:outline-none w-full" />
+                        <input type="search" id="search" placeholder="Search for Movies, Events, Plays, Sports and Activities" className=" border-none bg-transparent focus:outline-none w-full"  />
                     </div>
                 </div>
                 <div className="flex gap-5 items-center justify-end">
@@ -73,7 +75,25 @@ function NavLg(){
                     </div>
                 </div>
             </div>
-        </>)
+            <div className="bg-gray-800 text-white flex flex-row px-10 py-2.5 w-full">
+                <div className="flex flex-row w-1/2 gap-1 justify-evenly">
+                    <h5 className="text-gray-300 text-xs">Movies</h5>
+                    <h5 className="text-gray-300 text-xs">Stream</h5>
+                    <h5 className="text-gray-300 text-xs">Events</h5>
+                    <h5 className="text-gray-300 text-xs">Play</h5>
+                    <h5 className="text-gray-300 text-xs">Sport</h5>
+                    <h5 className="text-gray-300 text-xs">Activities</h5>
+                    <h5 className="text-gray-300 text-xs">Buzz</h5>
+                </div>
+                <div className="flex flex-row w-1/2 gap-3 justify-end">
+                    <h5 className="text-gray-300 text-xs">ListYourShow</h5>
+                    <h5 className="text-gray-300 text-xs">Corporate</h5>
+                    <h5 className="text-gray-300 text-xs">Offers</h5>
+                    <h5 className="text-gray-300 text-xs">Gift Cards</h5>
+                </div>
+            </div>
+        </div>
+        );
 }
 
 
@@ -89,7 +109,7 @@ const Navbar = (props) => {
                     {/* Medium/Tab Screen */}
                     <NavMd path={props.path} />
                 </div>
-                <div className="hidden w-full lg:flex bg-black-700 px-4 py-3">
+                <div className="hidden w-full lg:flex bg-black-700 ">
                     {/* Large Screen */}
                     <NavLg />
                 </div>

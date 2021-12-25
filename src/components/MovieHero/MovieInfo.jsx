@@ -12,7 +12,7 @@ export default function MovieInfo({ movie }) {
 
   const buyMovie = () => {
     setIsOpen(true);
-    setPrice(599);
+    setPrice(499);
   };
 
   return (
@@ -27,7 +27,7 @@ export default function MovieInfo({ movie }) {
             Rent ₹149
           </button>
           <button onClick={buyMovie} className="bg-red-500 text-white text-center font-bold px-6 py-2 rounded-md p-2">
-            Buy ₹599
+            Buy ₹499
           </button>
         </div>
       </div>

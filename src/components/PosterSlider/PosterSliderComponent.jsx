@@ -1,9 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "./carousel.css"
 
 function PosterCard(props) {
     let textColor;
@@ -77,7 +75,7 @@ function PosterSlider(props) {
             <div className= {`flex flex-col justify-center  ${theme.bgColor}   ${props.className}`}>
                 {props.elements}
                 <h1 className={`text-xl md:text-2xl lg:text-3xl font-bold  ${theme.textColor}`}>{props.title}</h1>
-                <Slider {...settings} className="p-3">
+                <Slider {...settings} className="p-3 slick_poster_slider">
                         {props.PosterDetails.map( (poster,index) => (
                             <PosterCard posterDetails ={poster} isdark = {props.isdark}  key={`Poster${index}`}/> 
                         ))}

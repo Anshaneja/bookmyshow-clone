@@ -23,7 +23,7 @@ function MovieHeroComponent() {
   
     const buyMovie = () => {
       setIsOpen(true);
-      setPrice(599);
+      setPrice(499);
     };
     return (
         <>

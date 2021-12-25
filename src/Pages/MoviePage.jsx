@@ -8,9 +8,7 @@ import { useParams } from "react-router-dom";
 import {MovieContext} from "../Context/movieContext";
 import axios from "axios";
 //css 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
+import "./castCarousel.css"
 function MoviePage() {
 
     const { id } =useParams();
@@ -138,7 +136,7 @@ function MoviePage() {
                 </div>
                 <div>
                     <h1 className="text-xl md:text-2xl font-bold text-black-800 ">Cast and Crew</h1>
-                    <Slider {...settings} className="py-3">
+                    <Slider {...settings} className="py-3 slick_cast_slider ">
                         {cast.map((castData) => (
                         <CastCard
                             image={castData.profile_path}

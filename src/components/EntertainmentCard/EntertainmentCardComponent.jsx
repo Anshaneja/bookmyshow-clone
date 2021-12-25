@@ -1,7 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./carousel.css";
 
 
@@ -60,7 +58,7 @@ function EntertainmentCardSlider() {
     return(
         <div className="pt-2 md:pt-5">
             <h1 className="text-xl lg:text-2xl py-3 pl-5 md:pl-8 lg:pl-11 font-bold text-black-700">The Best of Entertainment</h1>
-            <Slider {...settings} className="lg:px-9 px-3 react__slick__slider__parent">
+            <Slider {...settings} className="lg:px-9 px-3 slick_entertainment_parent">
                 {EntertainmentImages.map( (image,index) => (
                     <EntertainmentCard src={image} key={`card${index}`}/>
                 ) )}
