@@ -77,7 +77,9 @@ function PosterSlider(props) {
                 <h1 className={`text-xl md:text-2xl lg:text-3xl font-bold  ${theme.textColor}`}>{props.title}</h1>
                 <Slider {...settings} className="p-3 slick_poster_slider">
                         {props.PosterDetails.map( (poster,index) => (
-                            <PosterCard posterDetails ={poster} isdark = {props.isdark}  key={`Poster${index}`}/> 
+                            <div>
+                                <PosterCard posterDetails ={poster} isdark = {props.isdark}  key={`Poster${index}`}/> 
+                            </div>
                         ))}
                 </Slider>
             </div>
