@@ -48,7 +48,8 @@ function PosterSlider(props) {
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 2,
-                initialSlide: 2
+                initialSlide: 2,
+                infinite : true,
               }
             },
         ]

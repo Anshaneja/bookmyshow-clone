@@ -25,7 +25,7 @@ function MoviePage() {
     useEffect( () => {
         const requestCast = async () => {
             const getCast = await axios.get(`/movie/${id}/credits`);
-            setCast(getCast.data.cast);
+            setCast(getCast.data.cast.slice(0,10));
         };
         requestCast();
     }, [id]);
@@ -80,6 +80,7 @@ function MoviePage() {
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 2,
+                infinite: true,
               }
             },
             {
@@ -87,6 +88,7 @@ function MoviePage() {
                 settings: {
                   slidesToShow: 2,
                   slidesToScroll: 2,
+                  infinite: true,
                 }
               },
         ]
