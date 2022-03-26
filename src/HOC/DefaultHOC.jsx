@@ -1,25 +1,16 @@
+
 import React from "react";
-import DefaultLayout from '../layouts/DefaultLayout';
-import { Route } from 'react-router-dom';
+import Navbar from '../components/NavbarComponent'
 
-const DefaultHOC = ({ component : Component , ...rest}) => {
-
-    
-
+const DefaultLayout = (props) => {
     return (
-        <>
-            <Route 
-                {...rest}
-                component = { (props) => (
-                        <DefaultLayout path={rest.path}>
-                            <div className="w-full">
-                                <Component {...props}/>
-                            </div>
-                        </DefaultLayout>
-                )}
-            />
-        </>
+        <div>
+            <Navbar path={props.path}/>
+            {props.children}
+            <div>Footer</div>
+        </div>
     );
 };
 
-export default DefaultHOC; 
+
+export default DefaultLayout; 
