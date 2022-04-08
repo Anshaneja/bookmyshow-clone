@@ -89,8 +89,8 @@ function MovieHeroComponent() {
             </div>
             <h1 className="pl-2 text-md md:text-lg">{movieDetails.movieDescription}</h1>
             <div className="flex gap-3 pl-2">
-                <button className="w-1/2 rounded-lg bg-red-500 text-white text-md md:text-lg px-6 py-2 shadow-xl">Rent 149</button>
-                <button className="w-1/2 rounded-lg bg-red-500 text-white text-md md:text-lg px-6 py-2 shadow-xl">Buy 499</button>
+                <button onClick={rentMovies} className="w-1/2 rounded-lg bg-red-500 text-white text-md md:text-lg px-6 py-2 shadow-xl">Rent 149</button>
+                <button onClick={buyMovie} className="w-1/2 rounded-lg bg-red-500 text-white text-md md:text-lg px-6 py-2 shadow-xl">Buy 499</button>
             </div>
 
         </div>
