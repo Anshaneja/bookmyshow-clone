@@ -52,6 +52,7 @@ const HeroCarousel = () => {
         <div className="lg:hidden">
             <HeroSlider {...settings}>
                 {images.map( (image) => (
+                    <Link to={`/movie/${image.id}`}>
                     <div className="w-full h-56 md:h-80 py-3">
                         <img 
                             src= {`https://images.tmdb.org/t/p/original${image.backdrop_path}`}
@@ -59,6 +60,7 @@ const HeroCarousel = () => {
                             className="w-full h-full object-center"
                         />
                     </div>
+                    </Link>
                 ))}
             </HeroSlider>
         </div>

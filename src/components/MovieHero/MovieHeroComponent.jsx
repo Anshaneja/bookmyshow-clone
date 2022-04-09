@@ -12,6 +12,8 @@ function MovieHeroComponent() {
         movieDescription : movie.tagline,
         genres: movie.genres?.map( ( {name} ) => name).join(", "),
         language : movie.original_language,
+        rating : movie.vote_average * 10 + '%',
+        rating_count : movie.vote_count < 1000? movie.vote_count : String( Math.round(movie.vote_count / 100)/10 + 'k'),
     };
     const [isOpen, setIsOpen] = useState(false);
     const [price, setPrice] = useState(0);
@@ -43,8 +45,8 @@ function MovieHeroComponent() {
                 <h1 className="text-4xl font-bold text-white">{movieDetails.movieName}</h1>
                 <div className="flex gap-2">
                     <span><FaHeart className="text-red-500 inline-block  text-3xl"/></span>
-                    <h1 className="font-bold text-2xl ">93%</h1>
-                    <h1 className="text-lg mt-1">7.3k Ratings</h1>
+                    <h1 className="font-bold text-2xl ">{movieDetails.rating}</h1>
+                    <h1 className="text-lg mt-1">{movieDetails.rating_count} Ratings</h1>
                 </div>
                 <div className="flex justify-between bg-gray-800 p-1 rounded-xl shadow-md">
                     <div className="flex flex-col justify-center px-2 pl-3">
@@ -75,8 +77,8 @@ function MovieHeroComponent() {
             </div>
             <div className="flex gap-2 pl-3 items-center">
                 <span className="items-start"><FaHeart className="text-red-500 inline-block text-xl mb-1"/></span>
-                <h1 className="font-bold text-lg ">93%</h1>
-                <h1 className="text-sm mt-1">7.3k Ratings</h1>
+                <h1 className="font-bold text-lg ">{movieDetails.rating}</h1>
+                <h1 className="text-sm mt-1">{movieDetails.rating_count} Ratings</h1>
                 </div>
             <div className="flex justify-between bg-blue-100 p-2 md:p-3 rounded-xl shadow-md">
                 <div className="flex flex-col justify-center pl-1.5 pr-0.5 md:px-3">

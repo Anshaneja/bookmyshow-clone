@@ -86,7 +86,7 @@ function NavLg(){
         })
         //console.log(searchResults.data.results);
         var searchResultsArray = searchResults.data.results
-        searchResultsArray = searchResultsArray.slice(0,5);
+        searchResultsArray = searchResultsArray.slice(0,8);
         setSearchArray(searchResultsArray)
         //console.log(searchArray);
     }

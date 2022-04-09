@@ -7,7 +7,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 axios.defaults.params = {};
-axios.defaults.params["api_key"] = "7e2266e335589f47e49bcbfad0393379";
+axios.defaults.params['api_key'] = process.env.REACT_APP_TMDB_API_KEY;
 
 function abc(path, Component){
   return (

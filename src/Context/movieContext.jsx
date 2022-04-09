@@ -9,6 +9,8 @@ const MovieProvider = ({children}) => {
         overview : "",
         backdrop_path : "",
         poster_path : "",
+        vote_average : 0,
+        vote_count : 0,
     });
     return (
         <MovieContext.Provider value={{movie,setMovie}}>
