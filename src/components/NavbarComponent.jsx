@@ -4,7 +4,8 @@ import { RiArrowLeftSLine } from 'react-icons/ri';
 import { GoTriangleDown} from 'react-icons/go';
 import {MovieContext} from "../Context/movieContext";
 import  axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../resources/logo.png";
 
 
 function removeListner(event){
@@ -110,11 +111,16 @@ function NavLg(){
     return (
         <div className="flex flex-col w-full">
             <div className="flex items-center justify-between mx-3 w-full px-6 py-4">
-                <div className="flex items-center w-1/2 gap-3">
-                    <div className="flex w-10 h-10">
-                        <img src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png" alt="logo" className="w-full h-full" />
+                <div className="flex items-center w-3/5 gap-3">
+                    <Link to="/">
+                    <div className='text-white text-lg flex items-center '>
+                        Book
+                        <div className="flex w-8 h-8">
+                            <img src={logo} alt="logo" className="w-full h-full" />
+                        </div>
+                        show
                     </div>
-                   
+                    </Link>
                     <div className='relative flex flex-col items-center w-full ' onMouseEnter={ show}  onMouseLeave={hide} >
                         <div className="flex items-center gap-3  rounded bg-white w-full px-3 py-1.5 " >
                             <BiSearch className="text-black-500"/>

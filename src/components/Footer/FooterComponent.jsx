@@ -1,17 +1,21 @@
 import { FaFacebookF , FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import logo from "../../resources/logo.png"
 function FooterComponent() {
     return (
         <>
             <div className="flex flex-col gap-4 bg-black-800 py-10 justify-center">
                 <div className="flex items-center gap-5">
                     <div className="bg-gray-500 w-full " style={ {height : "1px"}}></div>
-                    <div className="flex text-white items-center gap-1">
+                    <Link to="/">
+                    <div className="flex text-lg text-white items-center">
                         Book
-                        <div className="h-10 w-10">
-                            <img src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png" alt="logo" className="h-full w-full"/>
+                        <div className="h-8 w-8">
+                            <img src={logo} alt="logo" className="h-full w-full"/>
                         </div>
                         show
                     </div>
+                    </Link>
                     <div className="bg-gray-500 w-full " style={ {height : "1px"}}></div>
                 </div>
                 <div className="flex items-center gap-4 justify-center">
