@@ -13,9 +13,9 @@ function PosterCard(props) {
     }
     return(
         <Link to={`/movie/${props.posterDetails.id}`}>
-            <div className="px-3">
-                <div className="h-90 w-auto pb-2">
-                    <img src={`https://images.tmdb.org/t/p/original${props.posterDetails.poster_path}`} alt="Poster" className="w-full h-full rounded-xl"/>
+            <div className="px-2">
+                <div className="h-40 lg:h-90 w-auto pb-2">
+                    <img src={`https://images.tmdb.org/t/p/original${props.posterDetails.poster_path}`} alt="Poster" className="w-full h-full "/>
                 </div>
                 <h1 className={`text-md md:text-xl font-semibold pl-2  ${textColor}`}>{props.posterDetails.title}</h1>
             </div>
@@ -44,8 +44,8 @@ function PosterSlider(props) {
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
+                slidesToShow: 3,
+                slidesToScroll: 3,
                 initialSlide: 0,
                 infinite : true,
                 arrows : false,
@@ -72,9 +72,9 @@ function PosterSlider(props) {
     }
     return(
         <>
-            <div className= {`flex flex-col justify-center pl-5 lg:pb-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10  ${theme.bgColor} ${props.className} `}>
+            <div className= {`flex flex-col justify-center lg:pb-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10  ${theme.bgColor} ${props.className} `}>
                 {props.elements}
-                <h1 className={`text-xl md:text-2xl lg:text-3xl font-bold  ${theme.textColor}`}>{props.title}</h1>
+                <h1 className={`pl-5 text-xl md:text-2xl lg:text-3xl font-bold  ${theme.textColor}`}>{props.title}</h1>
                 <Slider {...settings} className="p-3 slick_poster_slider">
                         {props.PosterDetails.map( (poster,index) => (
                             <div>

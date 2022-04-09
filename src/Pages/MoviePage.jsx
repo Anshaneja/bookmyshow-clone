@@ -86,9 +86,10 @@ function MoviePage() {
             {
                 breakpoint: 500,
                 settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2,
+                  slidesToShow: 4,
+                  slidesToScroll: 4,
                   infinite: true,
+                  arrows : false,
                 }
               },
         ]
@@ -97,7 +98,7 @@ function MoviePage() {
     const CastCard = (props) => {
         return (
             <div className="flex flex-col items-center">
-                <div className="h-24 w-24  md:h-32 md:w-32 ">
+                <div className="h-16 w-16  md:h-32 md:w-32 ">
                     <img src= {`https://image.tmdb.org/t/p/original${props.image}`} alt="Cast Profile Pic" className=" h-full w-full rounded-full" />
                 </div>
                 <h1 className=" text-sm md:text-md text-center">{props.name}</h1>
@@ -110,7 +111,7 @@ function MoviePage() {
     return(
         <div>
             <MovieHeroComponent />
-            <div className="flex flex-col gap-8 md:gap-14 w-full lg:w-3/4 py-5 px-8 lg:py-10 lg:px-16">
+            <div className="flex flex-col gap-8 md:gap-14 w-full lg:w-3/4 py-5 px-6 lg:py-10 lg:px-16">
                 <div>
                     <h1 className="text-xl md:text-2xl font-bold text-black-800 ">About the movie</h1>
                     <p className="pt-3 text-sm md:text-md text-gray-800">
@@ -136,8 +137,10 @@ function MoviePage() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex flex-col gap-6 md:gap-12 w-full lg:w-3/4 py-5 lg:py-10 lg:px-16">
                 <div>
-                    <h1 className="text-xl md:text-2xl font-bold text-black-800 ">Cast and Crew</h1>
+                    <h1 className="pl-5 text-xl md:text-2xl font-bold text-black-800 ">Cast and Crew</h1>
                     <Slider {...settings} className="py-3 slick_cast_slider ">
                         {cast.map((castData) => (
                         <CastCard
