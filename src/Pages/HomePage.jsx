@@ -61,21 +61,23 @@ function HomePage(){
             title= "Popular Movies"
             PosterDetails = {PopularMovies}
             isdark = {false} 
-            className="pl-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10 "
+            
         />
         <EntertainmentCardSlider />
         <PosterSlider 
             title= "Top Rated Movies"
             PosterDetails = {TopRatedMovies}
             isdark = {true}
-            className="mt-4 md:mt-12 lg:mt-20 pl-5 md:pl-8 lg:pl-11 "
-            elements = {<img className="w-full h-30 mb-10" alt="Premiere" src ="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png" />} 
+            className=""
+            elements = {
+                <img className="hidden lg:block w-full h-30 mb-10" alt="Premiere" src ="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png" />
+            } 
         />
         <PosterSlider 
             title= "Upcoming Movies"
             PosterDetails = {UpcomingMovies}
             isdark = {false}
-            className="pl-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10 "  
+             
         />
         
       </div>

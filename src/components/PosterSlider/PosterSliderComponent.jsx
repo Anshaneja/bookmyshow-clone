@@ -22,8 +22,6 @@ function PosterCard(props) {
         </Link>
     );
 }
-
-
 function PosterSlider(props) {
 
 
@@ -74,7 +72,7 @@ function PosterSlider(props) {
     }
     return(
         <>
-            <div className= {`flex flex-col justify-center  ${theme.bgColor}   ${props.className}`}>
+            <div className= {`flex flex-col justify-center pl-5 lg:pb-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10  ${theme.bgColor} ${props.className} `}>
                 {props.elements}
                 <h1 className={`text-xl md:text-2xl lg:text-3xl font-bold  ${theme.textColor}`}>{props.title}</h1>
                 <Slider {...settings} className="p-3 slick_poster_slider">
