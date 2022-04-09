@@ -29,8 +29,8 @@ function FooterComponent() {
                     </div>
                 </div>
                 <div className="flex flex-col text-gray-500 text-sm items-center">
-                    <h1>Website developed by Ansh Aneja</h1>
-                    <h1>This Website is a clone of the original BookMyShow website.The content used on this site is subject to their respected owners.</h1>
+                    <h1>Website developed by <a target="_blank" href="https://www.linkedin.com/in/ansh-aneja/" rel="noopener noreferrer">Ansh Aneja </a></h1>
+                    <h1>This Website is a clone of the original  <a target="_blank" href="https://www.bookmyshow.com" rel="noopener noreferrer">BookMyShow</a> website. The content used on this site is subject to their respected owners.</h1>
                 </div>
             </div>
         </>

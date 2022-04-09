@@ -96,7 +96,6 @@ function NavLg(){
                 {searchArray.map(elem => (
                     <li className='cursor-pointer hover:bg-gray-300 transition duration-150 ease-in-out' onClick={() => {
                         gotoMoviePage(elem.id)
-                        console.log(elem.id)
                     } }>
                         <div className='flex justify-start items-center p-2 px-5'>
                             <BiCameraMovie className="text-black-500" />
