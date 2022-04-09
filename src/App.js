@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HomePage from "./Pages/HomePage";
 import MoviePage from "./Pages/MoviePage";
 import axios from "axios";

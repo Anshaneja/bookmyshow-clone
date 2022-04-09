@@ -13,9 +13,9 @@ function PosterCard(props) {
     }
     return(
         <Link to={`/movie/${props.posterDetails.id}`}>
-            <div className="px-2">
-                <div className="h-40 lg:h-90 w-auto pb-2">
-                    <img src={`https://images.tmdb.org/t/p/original${props.posterDetails.poster_path}`} alt="Poster" className="w-full h-full "/>
+            <div className="px-2 md:px-5 ">
+                <div className="w-auto pb-2 lg:pb">
+                    <img src={`https://images.tmdb.org/t/p/original${props.posterDetails.poster_path}`} alt="Poster" className="w-full h-full rounded md:rounded-xl"/>
                 </div>
                 <h1 className={`text-md md:text-xl font-semibold pl-2  ${textColor}`}>{props.posterDetails.title}</h1>
             </div>
@@ -74,7 +74,7 @@ function PosterSlider(props) {
         <>
             <div className= {`flex flex-col justify-center lg:pb-5 md:pl-8 lg:pl-11 pt-3 md:pt-6 lg:pt-10  ${theme.bgColor} ${props.className} `}>
                 {props.elements}
-                <h1 className={`pl-5 text-xl md:text-2xl lg:text-3xl font-bold  ${theme.textColor}`}>{props.title}</h1>
+                <h1 className={`pl-5 text-xl md:text-2xl lg:text-3xl font-bold pb-2  ${theme.textColor}`}>{props.title}</h1>
                 <Slider {...settings} className="p-3 slick_poster_slider">
                         {props.PosterDetails.map( (poster,index) => (
                             <div>
